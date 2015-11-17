@@ -16,7 +16,7 @@ public class Game {
     int score = 0;
     int worpnr = 0;
     for (int i=0; i < 10; i++) {
-      if (worpen[worpnr] + worpen[worpnr+1] == 10) {
+      if (isSpare(worpnr)) {
         score += 10 + worpen[worpnr+2];
       }
       else {
@@ -25,5 +25,9 @@ public class Game {
       worpnr += 2;
     }
     return score;
+  }
+
+  private boolean isSpare(int worpnr) {
+    return worpen[worpnr] + worpen[worpnr+1] == 10;
   }
 }
