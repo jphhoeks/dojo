@@ -5,7 +5,7 @@ package dojo.bowling;
  */
 public class Game {
 
-  private int[] worpen = new int[20];
+  private int[] worpen = new int[21];
   private int huidigeWorp = 0;
 
   public void worp(int aantalKegels) {
