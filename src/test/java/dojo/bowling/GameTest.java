@@ -40,4 +40,13 @@ public class GameTest {
     werpMeerdereKeren(17, 0);
     assertEquals(16, game.score());
   }
+
+  @Test
+  public void laatsteFrameSpare() {
+    werpMeerdereKeren(18, 0);
+    game.worp(6);
+    game.worp(4);
+    game.worp(3);
+    assertEquals(13, game.score());
+  }
 }
