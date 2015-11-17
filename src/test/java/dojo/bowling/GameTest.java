@@ -59,4 +59,9 @@ public class GameTest {
     assertEquals(24, game.score());
   }
 
+  @Test
+  public void perfecteWedstrijd() {
+    werpMeerdereKeren(12, 10);
+    assertEquals(300, game.score());
+  }
 }
