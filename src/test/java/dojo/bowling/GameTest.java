@@ -49,4 +49,14 @@ public class GameTest {
     game.worp(3);
     assertEquals(13, game.score());
   }
+
+  @Test
+  public void strike() {
+    game.worp(10);
+    game.worp(4);
+    game.worp(3);
+    werpMeerdereKeren(16, 0);
+    assertEquals(24, game.score());
+  }
+
 }
