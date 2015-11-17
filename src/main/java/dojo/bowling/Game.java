@@ -16,7 +16,7 @@ public class Game {
     int score = 0;
     int worpnr = 0;
     for (int i=0; i < 10; i++) {
-      if (worpen[worpnr] == 10) {
+      if (isStrike(worpnr)) {
         score += 10 + worpen[worpnr+1] + worpen[worpnr+2];
         worpnr += 1;
       }
@@ -30,6 +30,10 @@ public class Game {
       }
     }
     return score;
+  }
+
+  private boolean isStrike(int worpnr) {
+    return worpen[worpnr] == 10;
   }
 
   private boolean isSpare(int worpnr) {
