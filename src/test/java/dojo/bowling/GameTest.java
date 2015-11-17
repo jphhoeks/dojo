@@ -7,22 +7,29 @@ import static org.junit.Assert.assertEquals;
 
 public class GameTest {
 
+  private Game game;
+
+  @Before
+  public void setup() {
+    game = new Game();
+  }
+
   @Test
   public void elkeWorpNulKegels() {
-    Game g = new Game();
+    werpMeerdereKeren(0);
+    assertEquals(0, game.score());
+  }
+
+  private void werpMeerdereKeren(int aantalKegels) {
     for (int i = 0; i < 20; i++) {
-      g.worp(0);
+      game.worp(aantalKegels);
     }
-    assertEquals(0, g.score());
   }
 
   @Test
   public void elkeWorpEenKegel() {
-    Game g = new Game();
-    for (int i = 0; i < 20; i++) {
-      g.worp(1);
-    }
-    assertEquals(20, g.score());
+    werpMeerdereKeren(1);
+    assertEquals(20, game.score());
   }
 
 }
