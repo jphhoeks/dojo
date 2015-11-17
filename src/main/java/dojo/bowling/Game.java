@@ -5,7 +5,10 @@ package dojo.bowling;
  */
 public class Game {
 
-  private int[] worpen = new int[21];
+  private static final int AANTAL_FRAMES = 10;
+  private static final int MAX_AANTAL_WORPEN = 21;
+
+  private int[] worpen = new int[MAX_AANTAL_WORPEN];
   private int huidigeWorp = 0;
 
   public void worp(int aantalKegels) {
@@ -15,7 +18,7 @@ public class Game {
   public int score() {
     int score = 0;
     int worpnr = 0;
-    for (int i=0; i < 10; i++) {
+    for (int i = 0; i < AANTAL_FRAMES; i++) {
       if (isStrike(worpnr)) {
         score += 10 + worpen[worpnr+1] + worpen[worpnr+2];
         worpnr += 1;
